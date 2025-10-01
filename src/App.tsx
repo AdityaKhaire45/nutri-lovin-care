@@ -10,6 +10,10 @@ import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import Settings from "./pages/Settings";
 import ComingSoon from "./pages/ComingSoon";
+import FoodLog from "./pages/FoodLog";
+import WaterTracker from "./pages/WaterTracker";
+import ProgressPage from "./pages/ProgressPage";
+import AIMealSuggestions from "./pages/AIMealSuggestions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,10 +48,7 @@ const App = () => (
               path="/dashboard/food"
               element={
                 <ProtectedRoute>
-                  <ComingSoon
-                    title="Food Log Coming Soon"
-                    description="We're building a beautiful food logging experience for you. Track your meals, calories, and nutrition with ease."
-                  />
+                  <FoodLog />
                 </ProtectedRoute>
               }
             />
@@ -55,10 +56,7 @@ const App = () => (
               path="/dashboard/water"
               element={
                 <ProtectedRoute>
-                  <ComingSoon
-                    title="Water Tracker Coming Soon"
-                    description="Stay hydrated! We're creating an intuitive water tracking feature to help you reach your daily hydration goals."
-                  />
+                  <WaterTracker />
                 </ProtectedRoute>
               }
             />
@@ -66,10 +64,15 @@ const App = () => (
               path="/dashboard/progress"
               element={
                 <ProtectedRoute>
-                  <ComingSoon
-                    title="Progress Dashboard Coming Soon"
-                    description="Visualize your wellness journey with beautiful charts and insights about your nutrition and health trends."
-                  />
+                  <ProgressPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/dashboard/ai"
+              element={
+                <ProtectedRoute>
+                  <AIMealSuggestions />
                 </ProtectedRoute>
               }
             />

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { supabase } from "@/integrations/supabase/client";
+import AIMealSuggestions from "./AIMealSuggestions";
 import {
   Home,
   Apple,
@@ -240,15 +241,18 @@ export default function Dashboard() {
               </Card>
             </div>
 
-            {/* Coming Soon Notice */}
+            {/* Coming Soon Notice + AI Suggestions */}
             <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/20">
               <CardContent className="py-8 text-center">
                 <Heart className="h-12 w-12 text-primary mx-auto mb-4" fill="currentColor" />
                 <h3 className="text-2xl font-heading font-bold mb-2">More Features Coming Soon!</h3>
-                <p className="text-muted-foreground text-base max-w-2xl mx-auto">
+                <p className="text-muted-foreground text-base max-w-2xl mx-auto mb-6">
                   We're working hard to bring you detailed food logging, water tracking, 
                   and progress charts. Stay tuned for updates!
                 </p>
+                <div className="max-w-xl mx-auto">
+                  <AIMealSuggestions />
+                </div>
               </CardContent>
             </Card>
           </div>
